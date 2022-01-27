@@ -16,4 +16,10 @@ export class ProductsService {
     findById(id: string): Product {
         return this.products.find((p) => p.id === id);
     }
+
+    delete(id: string): Product[] {
+      const index = this.products.findIndex((product) => product.id === id);
+      this.products.splice(index, 1);
+      return this.products;
+    }
 }
