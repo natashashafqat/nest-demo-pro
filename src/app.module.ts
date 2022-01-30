@@ -2,11 +2,11 @@ import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
-import { ProductsController } from './products/products.controller';
-import { ProductsModule } from './products/products.module';
+import { PokemonController } from './pokemon/pokemon.controller';
+import { PokemonModule } from './pokemon/pokemon.module';
 
 @Module({
-  imports: [ProductsModule],
+  imports: [PokemonModule],
   controllers: [AppController],
   providers: [AppService],
 })
@@ -14,7 +14,7 @@ export class AppModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(LoggerMiddleware)
-      .exclude({ path: '/products', method: RequestMethod.POST })
-      .forRoutes(ProductsController);
+      .exclude({ path: '/pokemon', method: RequestMethod.POST })
+      .forRoutes(PokemonController);
   }
 }

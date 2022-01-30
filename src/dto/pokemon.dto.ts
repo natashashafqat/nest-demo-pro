@@ -1,12 +1,10 @@
 import { IsNotEmpty, IsNumber, IsString } from "class-validator";
 
-export class ProductDTO {
+export class PokemonDTO {
   @IsNotEmpty() @IsString()
   readonly id: string;
   @IsNotEmpty() @IsString()
   readonly name: string;
-  @IsNotEmpty() @IsNumber()
-  readonly qty: number;
-  @IsNotEmpty() @IsNumber()
-  readonly price: number;
+  @IsNotEmpty() @IsString()
+  readonly type: string;
 }
