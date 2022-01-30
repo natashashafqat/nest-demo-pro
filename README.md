@@ -1,6 +1,8 @@
 ## Description
 
-NestJS course project.
+NestJS practice with Pokemon!
+
+![Pokemon](resources/pokemon.png?raw=true "Pokemon")
 
 ## Installation
 
