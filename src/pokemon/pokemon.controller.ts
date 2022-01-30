@@ -1,9 +1,11 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, UseFilters } from '@nestjs/common';
+import { HttpExceptionFilter } from 'src/common/filters/http-exception.filter';
 import { PokemonDTO } from 'src/dto/pokemon.dto';
 import { Pokemon } from 'src/interfaces/pokemon.interface';
 import { PokemonService } from './pokemon.service';
 
 @Controller('pokemon')
+@UseFilters(HttpExceptionFilter)
 export class PokemonController {
   constructor(private pokemonService: PokemonService) { }
 
